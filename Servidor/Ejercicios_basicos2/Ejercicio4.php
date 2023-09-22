@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style4.css">
-    <link rel="stylesheet" href="styles1.css">
     <title>Ejercicio4</title>
 </head>
 <body>
@@ -18,9 +16,9 @@ $radio = rand(50,150);
 $radio2 = rand(50,150);
 $radio3 = rand(50,150);
 
-    echo "<div style='background-color:$colores[$n];opacity:0.5; width:$radio3"."px; height:$radio"."px; border-radius:100%; float:left;'></div>";
-    echo "<div style='background-color:$reverso[$n];opacity:0.5; width:$radio"."px; height:$radio2"."px; border-radius:100%; float:left;'></div>";
-    echo "<div style='background-color:$dif[$n];opacity:0.5; width:$radio2"."px; height:$radio3"."px; border-radius:100%; float:left;'></div>";
+    echo "<div style='background-color:$colores[$n];opacity:0.5; width:$radio2"."px; height:$radio2"."px; border-radius:50%; float:left;'></div>";
+    echo "<div style='background-color:$reverso[$n];opacity:0.5; width:$radio"."px; height:$radio"."px; border-radius:50%; float:left;'></div>";
+    echo "<div style='background-color:$dif[$n];opacity:0.5; width:$radio3"."px; height:$radio3"."px; border-radius:50%; float:left;'></div>";
     ?>
 
 </body>
