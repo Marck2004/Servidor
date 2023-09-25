@@ -16,30 +16,23 @@
             $sumaprimera = $dado1 + $dado2;
             $sumasegunda = $dado3 + $dado4;
 
-        echo "<div style='border:6px solid red;width: 284px;height: 140px;float:left;'>
+        echo "<div style='border:6px solid red;width: 290px;height: 140px;float:left;'>
         <img src='img/$dado1.svg'>
         <img src='img/$dado2.svg'></div>
 
-            <div style='border:6px solid blue;width: 284px;height: 140px;float:left;'>
+            <div style='border:6px solid blue;width: 290px;height: 140px;float:left;'>
             <img src='img/$dado3.svg'>
             <img src='img/$dado4.svg'></div>";
-        
-    switch (!is_null($dado1)) {
+
+    switch (!is_null($dado1) || !is_null($dado2) || !is_null($dado3) || !is_null($dado4)) {
         case $dado1==$dado2 && $dado3!=$dado4:
             print "Ha ganado el primer jugador";
         break;
         case $dado1!=$dado2 && $dado3==$dado4:
             print "Ha ganado el segundo jugador";
         break;
-        case $dado1=$dado2 > $dado3=$dado4:
-            print "Ha ganado el primer jugador";
-        break;
         case $sumaprimera > $sumasegunda:
             print "Ha ganado el primer jugador";
-        break;
-
-        case $dado3=$dado4 > $dado1=$dado2:
-            print "Ha ganado el segundo jugador";
         break;
         case $sumaprimera < $sumasegunda:
             print "Ha ganado el segundo jugador";
