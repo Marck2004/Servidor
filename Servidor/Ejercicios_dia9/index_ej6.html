@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    
+    <p>Escriba los datos siguiente:</p>
+
+        <form action="Ej6.php" method="get">
+    <p><b>Nombre</b><input type="text" name="Nombre" id="Nombre">
+    <b>Apellidos</b><input type="text" name="Apellido" id="Apellido">
+        <b>Edad</b><select name="Edad" id="Edad">
+            <option value=" ">Introduzca edades</option>
+            <option value="15">Menor que 20</option>
+            <option value="25">Entre 20 y39</option>
+            <option value="50">Entre 40 y 59</option>
+            <option value="80">Mas de 60</option>
+        </select>
+    </p>
+
+    <p><b>Peso</b> <input type="number" name="Peso" id="Peso">kg
+        <b>Sexo: </b>Hombre<input type="radio" name="Sexo" id="Hombre" value="Hombre">
+        Mujer<input type="radio" name="Sexo" id="Mujer" value="Mujer">
+        <b>Estado civil: </b>Soltero<input type="radio" name="EstadoCivil" id="Soltero" value="Soltero">
+        Casado<input type="radio" name="EstadoCivil" id="Casado" value="Casado">
+        Otro<input type="radio" name="EstadoCivil" id="Otro" value="Otro">
+    </p>
+
+    <p><b>Aficiones:</b><br>
+        Cine<input type="checkbox" name="Cine" id="Cine" value="Cine">
+        Literatura<input type="checkbox" name="Literatura" id="Literatura" value="Literatura">
+        Tebeos<input type="checkbox" name="Tebeos" id="Tebeos" value="Tebeos"><br>
+        Deporte<input type="checkbox" name="Deporte" id="Deporte" value="Deporte">
+        Musica<input type="checkbox" name="Musica" id="Musica" value="Musica">
+        Television<input type="checkbox" name="Television" id="Television" value="Television">
+    </p>
+</form>
+</body>
+</html>
