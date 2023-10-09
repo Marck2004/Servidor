@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.circulos{
+    width:100px; 
+    height:100px; 
+    border-radius:100%;
+    float:left;
+    opacity:0.5;
+    position:absolute;
+}
+#circulo2{
+    left: 35px;
+    top: 60px;
+}
+#circulo3{
+    left: 70px;
+}
