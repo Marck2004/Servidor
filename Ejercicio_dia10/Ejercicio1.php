@@ -7,8 +7,5 @@
             print htmlspecialchars(trim(strip_tags($Indice)));
         }
     }
-        
-    
-    
 
 ?>

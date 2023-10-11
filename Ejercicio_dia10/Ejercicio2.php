@@ -55,6 +55,28 @@ print "</p>";
             print htmlspecialchars(trim(strip_tags($_REQUEST['Nacionalidad'])),ENT_QUOTES,"utf-8");
         }
 
+        if(isset($_REQUEST['Ingles']) == "Ingles"){
+            print "<p>".htmlspecialchars(trim(strip_tags($_REQUEST['Ingles'])),ENT_QUOTES,"utf-8")."</p>";
+        }
+        if(isset($_REQUEST['Castellano']) == "Castellano"){
+            print "<p>".htmlspecialchars(trim(strip_tags($_REQUEST['Castellano'])),ENT_QUOTES,"utf-8")."</p>";
+        }
+        if(isset($_REQUEST['Frances']) == "Frances"){
+            print "<p>".htmlspecialchars(trim(strip_tags($_REQUEST['Frances'])),ENT_QUOTES,"utf-8")."</p>";
+        }
+        if(isset($_REQUEST['Aleman']) == "Aleman"){
+            print "<p>".htmlspecialchars(trim(strip_tags($_REQUEST['Aleman'])),ENT_QUOTES,"utf-8")."</p>";
+        }
 
+        if(preg_match('/^[a-zA-Z0-9.*%]+@gmail\.com$/',$_REQUEST['email'])){
+            print "<p>".htmlspecialchars(trim(strip_tags($_REQUEST['email'])),ENT_QUOTES,"utf-8")."</p>";
+        }else{
+            print "El email no esta con caracteres aceptados";
+        }
+        if(preg_match('/^www\/\/www\[a-zA-Z0-9]\.com$/',$_REQUEST['url'])){
+            print "<p>".htmlspecialchars(trim(strip_tags($_REQUEST['url'])),ENT_QUOTES,"utf-8")."</p>";
+        }else{
+        print "<p>La url no es aceptada</p>";
+        }
 ?>
 <p><a href="Ejercicio2.html">Volver al formulario</a></p>
