@@ -14,7 +14,7 @@
     Apellido: <input type="text" name="Apellido" id="Apellido">
     </p>
 
-        <p>Edad:<input type="number" name="Number" id="Number"></p>
+        <p>Edad:<input type="number" name="edad" id="edad"></p>
         <p>Telefono: <input type="number" name="tlf" id="tlf"></p>
         <p>Email: <input type="email" name="email" id="email"></p>
         <p><input type="file" name="imagen" id="imagen"></p>
@@ -22,7 +22,42 @@
         </form>
         
         <?php
-        
+        if(isset($_REQUEST['Nombre'])){
+            if(preg_match('/^[A-Za-z]+$/',$_REQUEST['Nombre'])){
+                print "<p>El nombre introducido es: ".htmlspecialchars(trim(strip_tags( $_REQUEST['Nombre'])),ENT_QUOTES,'utf-8')."</p>";
+            }else{
+                print "<p style='color:red'>El campo nombre esta vacio o contiene numeros</p>";
+            }
+        }
+        if(isset($_REQUEST['Apellido'])){
+            if(preg_match('/^[A-Za-z]+$/',$_REQUEST['Apellido'])){
+                print "<p>El nombre introducido es: ".htmlspecialchars(trim(strip_tags( $_REQUEST['Apellido'])),ENT_QUOTES,'utf-8')."</p>";
+            }else{
+                print "<p style='color:red'>El campo apellido esta vacio o contiene numeros</p>";
+            }
+        }
+        if(isset($_REQUEST['edad'])){
+            if(preg_match('/^[1-9][0-9]$/',$_REQUEST['edad'])){
+                print "<p>La edad introducida es: ".htmlspecialchars(trim(strip_tags($_REQUEST['edad'])),ENT_QUOTES,'utf-8')."</p>";
+            }else{
+                print "<p style='color:red'>El campo edad es incorrecto</p>";
+            }
+        }
+        if(isset($_REQUEST['email'])){
+            if(preg_match('/^[A-Za-z%-&·()]+@gmail.com$/',$_REQUEST['email'])){
+                print "<p>El email es: ".htmlspecialchars(trim(strip_tags($_REQUEST['email'])),ENT_QUOTES,'utf-8')."</p>";
+            }else{
+                print "<p style='color:red'>El campo email es incorrecto</p>";
+            }
+        }
+        if(isset($_REQUEST['tlf'])){
+            if(preg_match('/^\d{9}$/',$_REQUEST['tlf'])){
+                print "<p>Telefono: ".htmlspecialchars(trim(strip_tags( $_REQUEST['tlf'])),ENT_QUOTES,'utf-8')."</p>";
+            }else{
+                print "<p style='color:red'>El telefono debe contener nueve numeros</p>";
+            }
+        }
+
     if(isset($_REQUEST['Enviar'])){
         if(is_uploaded_file($_FILES['imagen']['tmp_name'])){
             $nombreDirectorio = "img/";
@@ -30,9 +65,9 @@
             $nombreCompleto = $nombreDirectorio.$nombreFichero;
         
             move_uploaded_file($_FILES['imagen']['tmp_name'],$nombreCompleto);
-            print "movido";
+            print "<img src=$nombreCompleto>";
     }else{
-        print "<p>NO SE HA SUBIDO EL FICHERO</p>";
+        print "<p style='color:red'>NO SE HA SUBIDO LA IMAGEN</p>";
     }
     }
     
