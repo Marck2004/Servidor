@@ -45,15 +45,14 @@
                 $directorio = "imagenesPeliculas/";
                 $fichero = $_FILES['Imagen']['name'];
                 $nombreCompleto = $directorio.$fichero;
-
                 move_uploaded_file($_FILES['Imagen']['tmp_name'],$nombreCompleto);
-                print "<p><li>Imagen: ".$nombreCompleto."</li></p>";
+                print "<p><li>Imagen: <a href=".$nombreCompleto.">Link pelicula</a></li></p>";
             }else{
                 print "<li><p style='color:red'>No se sabe el nombre de la pelicula</p></li>";
             }
         }
     ?>
     </ul>
-    <p><a href="Ejercicio1.php">Insertar otra noticia</a></p>
+    <p><a href="Ejercicio2.php">Insertar otra noticia</a></p>
 </body>
 </html>
