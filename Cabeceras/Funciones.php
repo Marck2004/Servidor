@@ -11,4 +11,19 @@
         return htmlspecialchars(trim(strip_tags($saneado)),ENT_QUOTES,'utf-8');
     }
 
+    function validarclave($validado){
+        if($validado == "z80"){
+            return 0;
+        }else{
+            return 1;
+        }
+    }
+    function validarNombre($validado){
+        if(preg_match('/^[A-Za-z]+$/',$validado)){
+            return 0;
+        }else{
+            return 1;
+        }
+    }
+    
 ?>
