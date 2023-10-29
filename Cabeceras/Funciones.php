@@ -10,6 +10,13 @@
     function sanear($saneado){
         return htmlspecialchars(trim(strip_tags($saneado)),ENT_QUOTES,'utf-8');
     }
+    function validarEj6($validado){
+        if(isset($validado)){
+            return 0;
+        }else{
+            return 1;
+        }
+    }
 
     function validarclave($validado){
         if($validado == "z80"){
