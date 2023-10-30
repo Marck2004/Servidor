@@ -24,8 +24,7 @@
     }else{
 
         if(!$abrir) die ("ERROR: no se pudo abrir el fichero");
-
-        fwrite($abrir,"\n".$Nombre.":".$Destino.":".$Duracion.":".$DiaSemana);
+        fwrite($abrir,$Nombre.":".$Destino.":".$Duracion.":".$DiaSemana);
 
         fclose($abrir);
         header("location:Ejercicio6.php");
