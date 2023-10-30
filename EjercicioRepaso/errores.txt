@@ -1,0 +1,6 @@
+La cadena edad esta vacia
+La cadena nombre esta vacia
+La cadena edad esta vacia
+La cadena nombre esta vacia
+La cadena edad esta vacia
+La cadena nombre esta vacia

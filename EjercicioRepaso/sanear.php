@@ -15,6 +15,7 @@
             $error2 = 'error2=1&';
         }
         header('location:index.php?'.$error1.$error2);
+        captarErrores();
     }else{
         
         if(isset($_REQUEST['Enviar'])){
@@ -29,8 +30,13 @@
 
         move_uploaded_file($_FILES['Archivo']['tmp_name'],$fichero);
         print "<p><img src=".$fichero."></p>";
-    }else{
-        captarErrores();
+        copy($fichero,"dir_Enviar/".$fichero);
+        $archivos = scandir("dir_Enviar/");
+
+        foreach ($archivos as $key => $value) {
+            header("location:index.php?correcto=".$value."&correcto2=borrar.png&correcto3=descargar.png");
+        }
+       
     }
         }   
     }
@@ -43,10 +49,10 @@
             fwrite($abrirFich,"Error: El fichero no pudo abrirse");
         }
         if(empty($edad)){
-            fwrite($abrirFich,"La cadena edad esta vacia");
+            fwrite($abrirFich,"La cadena edad esta vacia\n");
         }
         if(empty($nombre)){
-            fwrite($abrirFich,"La cadena nombre esta vacia");
+            fwrite($abrirFich,"La cadena nombre esta vacia\n");
         }
 
         fclose($abrirFich);
