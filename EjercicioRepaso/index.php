@@ -32,7 +32,7 @@
     ?>
     <section class='fondo-azul'>
         <b>Titulo aportado</b><br>
-        <input type="file" name="Archivo" id="Archivo" directory webkitdirectory directory multiple><br><br>
+        <input type="file" name="Archivo" id="Archivo"><br><br>
         <input type="submit" value="Cargar Fichero" name="Enviar">
     </section>
     </div>

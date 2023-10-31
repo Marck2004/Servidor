@@ -29,14 +29,11 @@
         $fichero = $_FILES['Archivo']['name'];
 
         move_uploaded_file($_FILES['Archivo']['tmp_name'],$fichero);
-        print "<p><img src=".$fichero."></p>";
-        copy($fichero,"dir_Enviar/".$fichero);
-        $archivos = scandir("dir_Enviar/");
 
-        foreach ($archivos as $key => $value) {
-            header("location:index.php?correcto=".$value."&correcto2=borrar.png&correcto3=descargar.png");
-        }
-       
+        copy($fichero,"dir_Enviar/".$fichero);
+        
+            header("location:index.php?correcto=".$fichero."&correcto2=borrar.png&correcto3=descargar.png");
+
     }
         }   
     }
