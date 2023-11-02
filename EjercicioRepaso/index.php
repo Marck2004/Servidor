@@ -45,6 +45,7 @@
         <td>
             <?php 
             if(isset($_GET['correcto'])){
+
                 print $_GET['correcto'];
             } 
             ?>

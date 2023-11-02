@@ -28,12 +28,13 @@
 
         $fichero = $_FILES['Archivo']['name'];
 
-        move_uploaded_file($_FILES['Archivo']['tmp_name'],$fichero);
-
-        copy($fichero,"dir_Enviar/".$fichero);
+        move_uploaded_file($_FILES['Archivo']['tmp_name'],"dir_Enviar/".$fichero);
         
+        
+        if(!is_dir($directorio.'/'.$fichero) && !is_dir($directorio.'/'.$fichero)){
             header("location:index.php?correcto=".$fichero."&correcto2=borrar.png&correcto3=descargar.png");
-
+        }
+      
     }
         }   
     }
