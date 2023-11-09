@@ -15,16 +15,14 @@
     </form>
     <?php
 
-if(isset($_GET['creado']) && $_GET['creado'] == 1){
     if(isset($_GET['comprobado']) && $_GET['comprobado'] == 1){
-        
-        print "<p>Propiedades: ".$_COOKIE['crear']."</p>";
+        print "<p>Propiedades: ".date('D, d M Y H:i:s', $_COOKIE['crear'])."</p>";
     }
     if(isset($_GET['eliminado']) && $_GET['eliminado'] == 1){
-        setcookie("crear",$_REQUEST['duracion'],time()-60);
+        setcookie("crear");
         print "<p>Cookie eliminada</p>";
     }
-}
+
 ?>
 
 </body>
