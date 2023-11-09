@@ -7,7 +7,6 @@
 </head>
 <body>
 
-
     <form action="comprobar.php" method="post">
         <p>Crear cookie con duracion de <input type="number" name="duracion" id="duracion">entre 1 y 60 segundos <input type="submit" name="crear" value="crear"></p>
         <p>Comprobar la cookie <input type="submit" name="comprobar" value="comprobar"></p>
