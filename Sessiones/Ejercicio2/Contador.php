@@ -11,11 +11,12 @@
 
         session_start();
 
-    $_SESSION['contador'] = $_SESSION['contador']+ 1;
-
             if(isset($_REQUEST['enviar']) && isset($_REQUEST['reiniciar'])){
                 $_SESSION['contador'] = 1;
-                
+            }else if(isset($_SESSION['contador'])){
+                $_SESSION['contador'] = $_SESSION['contador']+ 1;
+            }else{
+                $_SESSION['contador'] = 1;
             }
 
     ?>
