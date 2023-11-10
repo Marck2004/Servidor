@@ -13,6 +13,8 @@
     
             if(isset($_REQUEST['enviar']) && isset($_REQUEST['reiniciar'])){
                 $_SESSION['contador'] = 1;
+            }else if(isset($_GET['iniciar']) && $_GET['iniciar'] == 0){
+                $_SESSION['contador'] = 1;
             }else if(isset($_SESSION['contador'])){
                 $_SESSION['contador'] = $_SESSION['contador']+ 1;
             }else{

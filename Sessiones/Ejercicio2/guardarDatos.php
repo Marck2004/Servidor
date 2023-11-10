@@ -8,7 +8,7 @@
     print "<p>Has recorrido o recargado ".$_SESSION['contador']." hasta ahora</p>";
 ?>
 
-    <form action="mostrarDatos" method="post">
+    <form action="mostrarDatos.php" method="post">
     <p>Nombre: <input type="text" name="nombre" id="nombre"></p>
     <p>Ciudad: <input type="text" name="ciudad" id="ciudad"></p>
     <p>Email: <input type="text" name="email" id="email"></p>
@@ -35,7 +35,7 @@
 
     <p>Contar: <?php $_SESSION['contador'] ?></p>
 
-    <p>Pagina 1: <a href="Contador.php">Reiniciar contador o sesion</a></p>
+    <p>Pagina 1: <a href="Contador.php?iniciar=0">Reiniciar contador o sesion</a></p>
     <p>Pagina 3: <a href="mostrarDatos.php">Datos de la sesion</a></p>
 
 
