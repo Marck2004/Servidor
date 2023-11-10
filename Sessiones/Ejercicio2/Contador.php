@@ -10,7 +10,7 @@
     <?php
 
         session_start();
-
+    
             if(isset($_REQUEST['enviar']) && isset($_REQUEST['reiniciar'])){
                 $_SESSION['contador'] = 1;
             }else if(isset($_SESSION['contador'])){
@@ -18,6 +18,8 @@
             }else{
                 $_SESSION['contador'] = 1;
             }
+
+            
 
     ?>
 <body>
