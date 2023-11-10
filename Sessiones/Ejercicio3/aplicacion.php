@@ -11,7 +11,7 @@
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nemo neque officiis delectus amet tenetur fugiat et error provident? Quam magnam nesciunt molestiae, ipsa quo atque deserunt quae ipsam reiciendis.</p> 
     
-    <p><a href="">Hacer click para salir</a></p>
+    <p><a href="salirSesion.php">Hacer click para salir</a></p>
 
 </body>
 </html>
