@@ -32,6 +32,7 @@
             puesto varchar(100) not null,
             primary key(codigo))"); 
 
+            mysqli_query($conexion,"delete from usuario");
 
             mysqli_query($conexion,"insert into usuario (usuario,pass,mail)
             values ('user1','admin1','user1@gmail.com')");
@@ -56,22 +57,5 @@
         ?>
         <input type="submit" value="enviar">
      </form>
-     <?php
-        if(isset($_GET['consultar']) && $_GET['consultar'] == 1){
-
-            $resultado = mysqli_query($conexion,"select * from usuario");
-            print "<table style='border:2px solid black'>";
-            while ($columna = mysqli_fetch_array($resultado)){
-    echo "<tr style='border:2px solid black'>";
-    echo "<td style='border:2px solid black'>" . $columna['usuario'] . "</td>". "<td style='border:2px solid black'>".$columna['pass']."</td>".
-    "<td style='border:2px solid black'>" . $columna['mail'] . "</td>";
-    echo "</tr";
-    print "</table>";
-    }
-        }
-        /*if(isset($_GET['agrear']) && $_GET['agregar'] == 1){
-            mysqli_query($conexion,"insert into empleados values ()");
-        }*/
-        ?>
 </body>
 </html>

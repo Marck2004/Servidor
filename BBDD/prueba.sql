@@ -14,3 +14,5 @@ insert into usuario (usuario,pass,mail)
             values(user2, admin2, user2@gmail.com)
             insert into usuario(usuario,pass,mail)
             values (user3, admin3, user3@gmail.com)
+            
+delete * from usuario;
