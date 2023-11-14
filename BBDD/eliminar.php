@@ -4,7 +4,7 @@
 
         $resultado = mysqli_query($conexion,"select * from empleados");
     ?>
-    <form action="muestraEliminar.php" method='post'>;
+    <form action="select.php" method='post'>;
     <?php
         print "<table style='border:2px solid black'>";
         while ($columna = mysqli_fetch_array($resultado)){
