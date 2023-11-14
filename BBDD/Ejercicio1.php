@@ -45,13 +45,13 @@
      <form action="validar.php" method="post">
         <p>Usuario: <input type="text" name="nombre" id="nombre"></p>
         <?php
-            if(isset($_GET['errorUsuario']) && $_GET['errorUsuario'] == 1){
+            if(isset($_GET['error']) && $_GET['error'] == 1){
                 print "<p style='color:red;'>Nombre vacio o incorrecto</p>";
             }
         ?>
         <p>Contraseña: <input type="password" name="clave" id="clvae"></p>
         <?php
-            if(isset($_GET['errorClave']) && $_GET['errorClave'] == 1){
+            if(isset($_GET['error']) && $_GET['error'] == 1){
                 print "<p style='color:red;'>Clave vacia o incorrecta</p>";
             }
         ?>
