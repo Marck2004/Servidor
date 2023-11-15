@@ -2,6 +2,10 @@
 
     $conexion = mysqli_connect("localhost","root","","datos_empleados");
 
+    session_start();
+
+    if(isset($_SESSION['usuario'])){
+
         $resultado = mysqli_query($conexion,"select * from empleados");
     ?>
     <form action="select.php" method='post'>;
@@ -12,14 +16,18 @@
     echo "<td style='border:2px solid black'>" . $columna['codigo'] . "</td>". "<td style='border:2px solid black'>".$columna['nombre']."</td>".
     "<td style='border:2px solid black'>" . $columna['lugar_nacimiento'] . "</td>"."<td style='border:2px solid black'>" . $columna['fecha_nacimiento'] . "</td>"
     ."<td style='border:2px solid black'>" . $columna['direccion'] . "</td>"."<td style='border:2px solid black'>" . $columna['telefono'] . "</td>"
-    ."<td style='border:2px solid black'>" . $columna['puesto']."</td>"."<td style='border:2px solid black;'><input type='checkbox' name='eliminar' value=".$columna['codigo']."></td>";
+    ."<td style='border:2px solid black'>" . $columna['puesto']."</td>"."<td style='border:2px solid black;'><input type='checkbox' name='eliminar[]' value=".$columna['codigo']."></td>";
     echo "</tr>";
     }
     print "</table>";
     ?>
     <input type="submit" value="eliminar" name="enviar">
     </form>
-
+<?php
+}else{
+    header('location:Ejercicio1.php?error=1');
+}
+?>
    
 
 

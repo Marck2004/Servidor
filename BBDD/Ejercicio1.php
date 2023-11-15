@@ -55,7 +55,7 @@
                 print "<p style='color:red;'>Clave vacia o incorrecta</p>";
             }
         ?>
-        <input type="submit" value="enviar">
+        <input type="submit" value="enviar" name="enviar">
      </form>
 </body>
 </html>

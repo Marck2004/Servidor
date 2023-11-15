@@ -1,6 +1,10 @@
 <?php
     $conexion = mysqli_connect("localhost","root","","datos_empleados");
 
+    session_start();
+
+    if(isset($_SESSION['usuario'])){
+
 if(isset($_GET['consultar']) && $_GET['consultar'] == 1){
             
 $resultado = mysqli_query($conexion,"select * from empleados");
@@ -17,7 +21,11 @@ $resultado = mysqli_query($conexion,"select * from empleados");
         print "</table>";
         
     }else if(isset($_REQUEST['enviar'])){
-        mysqli_query($conexion,"delete from empleados where codigo = ".($_REQUEST['eliminar']));
+
+        foreach ($_REQUEST['eliminar'] as $Indice => $valor) {
+            mysqli_query($conexion,"delete from empleados where codigo = ".$valor);
+        }
+        
 
     $resultado = mysqli_query($conexion,"select * from empleados");
     print "<table style='border:2px solid black'>";
@@ -33,4 +41,7 @@ $resultado = mysqli_query($conexion,"select * from empleados");
     }
 
     print "<br><a href='validar.php'>Volver a inicio</a>";
+}else{
+    header('location:Ejercicio1.php?error=1');
+}
 ?>

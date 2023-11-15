@@ -41,6 +41,8 @@
             header("location:añadir.php?".$errorCodigo.$errorNombre.$errorLugar.$errorFecha.$errorDireccion
                 .$errorTlf.$errorPuesto.$errorEstado);
     }else{
+        session_start();
+        if(isset($_SESSION['usuario'])){
         if(isset($_GET['añadir']) && $_GET['añadir'] == 1){
              
             mysqli_query($conexion,"insert into empleados(codigo,nombre,lugar_nacimiento,fecha_nacimiento,direccion,telefono,puesto) 
@@ -48,6 +50,9 @@
 
             header('location:select.php?consultar=1');
                 
+}
+}else{
+    header('location:Ejercicio1.php?error=1');
 }
 }
 
