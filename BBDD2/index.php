@@ -9,8 +9,8 @@
     <h1>Base de Datos Bloque 2</h1>
 
     <p><a href="index.php?crear=1">Conectar,crear BD y tabla</a><a href="insertar.php">&nbsp&nbsp Añadir registros</a>
-    <a href="">&nbsp&nbsp Listado alfabetico y por localidad</a><a href="">&nbsp&nbsp Buscar</a></p>
-    <p><a href="">Modificar</a><a href="">&nbsp&nbsp Borrar</a><a href="">&nbsp&nbsp Borrar todo</a></p>
+    <a href="mostrarAlfabetico.php">&nbsp&nbsp Listado alfabetico y por localidad</a><a href="buscarRegistros.php">&nbsp&nbsp Buscar</a></p>
+    <p><a href="selectModificar.php">Modificar</a><a href="Borrar.php">&nbsp&nbsp Borrar</a><a href="">&nbsp&nbsp Borrar todo</a></p>
 
     <?php
     
