@@ -10,7 +10,7 @@
 
     <p><a href="index.php?crear=1">Conectar,crear BD y tabla</a><a href="insertar.php">&nbsp&nbsp Añadir registros</a>
     <a href="mostrarAlfabetico.php">&nbsp&nbsp Listado alfabetico y por localidad</a><a href="buscarRegistros.php">&nbsp&nbsp Buscar</a></p>
-    <p><a href="selectModificar.php">Modificar</a><a href="Borrar.php">&nbsp&nbsp Borrar</a><a href="">&nbsp&nbsp Borrar todo</a></p>
+    <p><a href="selectModificar.php">Modificar</a><a href="Borrar.php">&nbsp&nbsp Borrar</a><a href="BorrarTodo.php">&nbsp&nbsp Borrar todo</a></p>
 
     <?php
     
