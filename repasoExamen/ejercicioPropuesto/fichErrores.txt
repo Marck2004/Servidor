@@ -1,0 +1,4 @@
+El campo usuario esta vacio/erroneo
+El campo clave esta vacio/erroneo
+El campo usuario esta vacio/erroneo
+El campo clave esta vacio/erroneo
