@@ -32,25 +32,49 @@
 
         $conexion = conectarBBDD("Agenda");
 
+        $select = "select * from personas";
+        $resultadoSelect = $conexion->query($select);
+
+        $comprobarExistencia = "select * from personas where Tlf = ?";
+
+        $selectComprobarExistencia = $conexion->prepare($comprobarExistencia);
+
+        $selectComprobarExistencia->execute([$tlf]);
+
+            if($selectComprobarExistencia->rowCount() != 1){
+
+            
+        if($resultadoSelect ->rowCount() < 10 ){
+
+
         $consulta = "insert into personas(Nombre,Apellido,Direccion,Tlf)
             values (?,?,?,?)";
-            $select = "select * from personas";
+            
             try{
-
+                
                 $resultado = $conexion -> prepare($consulta);
 
                 $resultado ->execute([$nombre,$apellido,$direccion,$tlf]);
 
-                $conexion->query($select);
+                echo "<br>El registro : <br>
+                    Nombre: $nombre, <br>
+                    Apellido: $apellido, <br>
+                    Direccion: $direccion, <br>
+                    Telefono: $tlf, <br>
+                    <b>Se ha creado con exito</b>";
 
-                foreach ($resultado as $registro) {
-
-                    print "registro: ".$registro["Nombre"].$registro["Apellido"].$registro["Direccion"].$registro["Tlf"];
-                }
+                    print "<a href='links.php'>Volver al formulario</a>";
 
             }catch(PDOException $e){
                 print "<p>Error al insertar en la bbdd ".$e->getMessage()."</p>";
             }
+        }else{
+            header("location:formInsertar.php?max=1");
         }
+        }else{
+            header("location:formInsertar.php?encontrado=1");
         }
+        
+        }
+    }
 ?>

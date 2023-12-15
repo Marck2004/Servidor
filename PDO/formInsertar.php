@@ -29,9 +29,17 @@
                     if(isset($_GET['errorTlf']) && $_GET['errorTlf'] == 1){
                         print "<p style='color:red'>Campo vacio/incorrecto</p>";
                     }
+                    if(isset($_GET['max']) && $_GET['max'] == 1){
+                        print "<p style='color:red'>Numero maximo de registros alcanzado</p>";
+                    }
+                    if(isset($_GET['encontrado']) && $_GET['encontrado'] == 1){
+                        print "<p style='color:red'>Registro encontrado</p>";
+                    }
                 ?>
                 <input type="submit" value="Insertar" name="enviar"><input type="reset" value="Resetear" name="resetear">
             </form>
+            <br>
+            <a href="links.php">Volver al formulario</a>
             <?php
         }else{
             header("location:index.php?error=1");

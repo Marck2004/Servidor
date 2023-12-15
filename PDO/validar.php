@@ -1,12 +1,10 @@
 
     <?php
     include('funciones.php');
-        if(isset($_REQUEST['enviar'])){
+        if(isset($_REQUEST['enviar']) || (isset($_GET['parametro']) || $_GET['parametro'] == 1 )){
 
             $nombre = sanear('nombre');
             $clave = sanear('clave');
-
-            
 
             $conexion = conectarBBDD("datos_empleados");
 
@@ -37,23 +35,17 @@
                         Tlf varchar(9) not null,
                         primary key(id))");
 
-                        ?>
-                            <ul>
-                                <li><a href="formInsertar.php">Insertar registro</a></li>
-                                <li><a href="listar.php">Listar Registros</a></li>
-                                <li><a href="formBorrar.php">Borrar registro</a></li>
-                            </ul>
-
-                        <?php
+                       header("location:links.php");
 
                     }else{
-                        header("location:index.php:error=1");
+                        header("location:index.php?error=1");
                         }
                 }catch(PDOException $a){
                     print "<p>Error no se puede conectar con la bbdd por".$a->getMessage()."</p>";
                 }
                 
-            
+        }else{
+            header("location:index.php");
         }
     
 
