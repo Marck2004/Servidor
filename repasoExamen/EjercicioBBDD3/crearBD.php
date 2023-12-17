@@ -8,7 +8,7 @@
 
         mysqli_query($conexion,"create database if not exists repaso") or die("ERROR NO SE CREO");
 
-        mysqli_query($conexion,"use repaso") or die("ERROR NO SE PUEDE USAR");
+        mysqli_query($conexion,"use repaso") or die("ERROR NO SE PUEDE USAR" .mysqi_error($conexion));
 
         $_SESSION['contador'] = mysqli_query($conexion,"show tables like 'usuario'");
         

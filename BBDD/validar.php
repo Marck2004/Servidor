@@ -17,7 +17,6 @@
     }
 
     $consulta = mysqli_query($conexion,"select count(*) as usuario from usuario where usuario= '$campoUsuario' and pass= '$campoClave'");
-    //$clave = mysqli_query($conexion,"select clave from usuarios where clave='$campoClave'");
 
     $fila = mysqli_fetch_assoc($consulta);
 
