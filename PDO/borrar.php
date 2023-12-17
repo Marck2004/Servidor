@@ -6,6 +6,8 @@
 
         $conexion = conectarBBDD("Agenda");
 
+        if(isset($_REQUEST['borrados'])){
+
         foreach ($_REQUEST['borrados'] as $borrado) {
             $borrar = "delete from personas where id=?";
 
@@ -17,6 +19,10 @@
         
         header("location:formBorrar.php");
 
+    }else{
+        print "<a href='links.php'>Volver al formulario</a><br>";
+                    print "<b>No ha seleccionado ningun registro</b>";
+    }
     }else{
         header("location:index.php?error=1");
     }
