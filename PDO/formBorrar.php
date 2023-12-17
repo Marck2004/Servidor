@@ -34,7 +34,8 @@
             </form>
                     <?php
             }else{
-                header("location:validar.php");
+                print "<a href='links.php'>Volver al formulario</a><br>";
+                    print "<b>No hay ningun registro</b>";
             }
 
         }else{

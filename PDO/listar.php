@@ -1,8 +1,6 @@
 <?php
     include("funciones.php");
     session_start();
-    print $_SESSION['usuario'];
-    print $_SESSION['clave'];
         if(isset($_SESSION['usuario']) && isset($_SESSION['clave'])){
 
             $conexion = conectarBBDD('Agenda');
@@ -28,7 +26,8 @@
                     <a href="links.php">Volver al formulario</a>
                     <?php
                 }else{
-
+                    print "<a href='links.php'>Volver al formulario</a><br>";
+                    print "<b>No hay ningun registro</b>";
                 }
 
         }else{

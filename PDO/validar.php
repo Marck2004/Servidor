@@ -9,7 +9,7 @@
             $conexion = conectarBBDD("datos_empleados");
 
             try{
-            $consulta = "select * from usuario where usuario = '$nombre' and pass='$clave'";
+            $consulta = "select * from usuario where user = '$nombre' and pass='$clave'";
 
             $numeroFilas = $conexion -> query($consulta);
 
