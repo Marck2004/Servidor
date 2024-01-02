@@ -21,7 +21,7 @@
 
     }else{
         print "<a href='links.php'>Volver al formulario</a><br>";
-                    print "<b>No ha seleccionado ningun registro</b>";
+                    print "<b style='color:red;'>No ha seleccionado ningun registro</b>";
     }
     }else{
         header("location:index.php?error=1");

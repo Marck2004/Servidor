@@ -25,7 +25,7 @@
     <form action="validar.php" method="post">
         <p>Usuario <input type="text" name="nombre" id="nombre"></p>
 
-        <p>Password <input type="text" name="clave" id="clave"></p>
+        <p>Password <input type="password" name="clave" id="clave"></p>
         <?php
             if(isset($_GET['error']) && $_GET['error']==1){
                 print "<p style='color:red;'>DATOS INCORRECTOS</p>";

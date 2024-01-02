@@ -18,6 +18,9 @@
                     <li><a href="formInsertar.php">Insertar registro</a></li>
                     <li><a href="listar.php">Listar Registros</a></li>
                     <li><a href="formBorrar.php">Borrar registro</a></li>
+                    <li><a href="formBuscar.php">Buscar registros</a></li>
+                    <li><a href="formModif.php">Modificar registro</a></li>
+                    <li><a href="borrarGeneral.php">Borrar sesion</a></li>
             </ul>
         <?php
     }

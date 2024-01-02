@@ -25,7 +25,8 @@
                         print "<p style='color:red'>Campo vacio/incorrecto</p>";
                     }
                 ?>
-                <p>Telefono: <input type="number" name="tlf" id="tlf"></p><?php
+                <p>Telefono: <input type="number" name="tlf" id="tlf"></p>
+                <?php
                     if(isset($_GET['errorTlf']) && $_GET['errorTlf'] == 1){
                         print "<p style='color:red'>Campo vacio/incorrecto</p>";
                     }

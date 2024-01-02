@@ -4,9 +4,9 @@
 
     if(isset($_SESSION['usuario']) && isset($_SESSION['clave'])){
 
-        if(empty($_REQUEST["nombre"]) &&
-        empty($_REQUEST["apellido"]) &&
-        empty($_REQUEST["direccion"]) &&
+        if(empty($_REQUEST["nombre"]) ||
+        empty($_REQUEST["apellido"]) ||
+        empty($_REQUEST["direccion"]) ||
         empty($_REQUEST["tlf"])){
 
             if(empty($_REQUEST["nombre"])){
@@ -19,7 +19,7 @@
                 $errorDireccion = 'errorDireccion=1&';
             }
             if(empty($_REQUEST["tlf"])){
-                $errorTlf = 'errorTlf = 1';
+                $errorTlf = 'errorTlf=1';
             }
 
             header("location:formInsertar.php?".$errorNombre.$errorApellido.$errorDireccion.$errorTlf);

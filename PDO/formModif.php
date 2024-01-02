@@ -33,10 +33,10 @@
 
             if($ejecutarSelect->rowCount() > 0){
                 ?>
-            <form action="borrar.php" method="post">
+            <form action="modificar.php" method="post">
                 <?php
                 print "<table style='border:2px solid black'>";
-                print "<th style='border:2px solid black'><b>BORRAR</b></th>
+                print "<th style='border:2px solid black'><b>MODIFICAR</b></th>
                 <th style='border:2px solid black'>
                     <b>
                     <a href='formBorrar.php?ascNombre=1'>
@@ -59,7 +59,7 @@
 
                     foreach ($ejecutarSelect as $resultado) {
                         print "<tr style='border:2px solid black'>";
-                        print "<td style='border:2px solid black'><input type='checkbox' name='borrados[]' value='$resultado[id]'></td>";
+                        print "<td style='border:2px solid black'><input type='radio' name='modificado' value='$resultado[id]'></td>";
                         print "<td style='border:2px solid black'>$resultado[Nombre]</td>";
                         print "<td style='border:2px solid black'>$resultado[Apellido]</td>";
                         print "<td style='border:2px solid black'>$resultado[Direccion]</td>";
@@ -68,9 +68,11 @@
                     }
 
                     print "</table>";
-
+                    if(isset($_GET['seleccion']) && $_GET['seleccion'] == 1){
+                        print "<p style='color:red;'>Debe seleccionar un boton</p>";
+                    }
                     ?>
-                    <input type="submit" value="Borrar" name="enviar"><input type="reset" value="Cancelar">
+                    <input type="submit" value="Modificar" name="enviar"><input type="reset" value="Cancelar">
             </form>
                     <?php
 
