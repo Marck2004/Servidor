@@ -23,9 +23,7 @@
 
             try{
                 
-
                 if(isset($_GET['ascNombre']) && $_GET['ascNombre'] == 1){
-              print "entra";
                     $select = "select * from personas where Nombre like ? and Apellido like ? order by Nombre asc";
     
                 }else if(isset($_GET['descNombre']) && $_GET['descNombre'] == 1){
@@ -41,7 +39,7 @@
                     $select = "select * from personas where Nombre like ? and Apellido like ? order by Apellido desc";
     
                 }else{
-                    print "entra";
+
                     $select = "select * from personas where Nombre like ? and Apellido like ? ";
                 }
 
@@ -49,8 +47,14 @@
 
                 $resultadoSelelect ->execute([$_SESSION['nombreBuscar'] .'%',$_SESSION['apellidoBuscar'] .'%']);
 
+                $describe = "show columns from personas";
+                $resultadoDescribe = $conexion->query($describe);
+                $columnas = $resultadoDescribe->fetchAll(PDO::FETCH_ASSOC);
+
                 print "<table style='border:2px solid black'>";
-                print "<th style='border:2px solid black'>
+                foreach ($columnas as $columna) {
+                    if($columna["Field"] == "Nombre"){
+                    print "<th style='border:2px solid black'>
                     <b>
                     <a href='buscar.php?ascNombre=1'>
                     <img src='img/flecha-hacia-arriba.png' style='heigth:15px;width:15px;'></a>NOMBRE
@@ -58,24 +62,26 @@
                     <img src='img/flecha-hacia-abajo.png' style='heigth:15px;width:15px;'></a>
                     </b>
                     <a href='buscar.php?ascNombre=1'>
-                    </th>
-                    <th style='border:2px solid black'>
+                    </th>";
+                    }else if($columna["Field"] == "Apellido"){
+                        print "<th style='border:2px solid black'>
                     <b>
                     <a href='buscar.php?ascApellido=1'>
                     <img src='img/flecha-hacia-arriba.png' style='heigth:15px;width:15px;'></a>APELLIDO
                     <a href='buscar.php?descApellido=1'>
                     <img src='img/flecha-hacia-abajo.png' style='heigth:15px;width:15px;'></a>
                     </b>
-                    </th>
-                    <th style='border:2px solid black'><b>DIRECCION</b></th>
-                    <th style='border:2px solid black'><b>TELEFONO</b></th>";
+                    </th>";
+                    }else{
+                        print "<th style='border:2px solid black'><b>".$columna["Field"]."</b></th>";
+                    }
+                }
 
                 foreach ($resultadoSelelect as $resultado) {
                     print "<tr style='border:2px solid black'>";
-                        print "<td style='border:2px solid black'>$resultado[Nombre]</td>";
-                        print "<td style='border:2px solid black'>$resultado[Apellido]</td>";
-                        print "<td style='border:2px solid black'>$resultado[Direccion]</td>";
-                        print "<td style='border:2px solid black'>$resultado[Tlf]</td>";
+                    foreach ($columnas as $columna) {
+                        print "<td style='border:2px solid black'>".$resultado[$columna['Field']]."</td>";
+                    }
                         print "</tr>";
                 }
                 print "</table>";

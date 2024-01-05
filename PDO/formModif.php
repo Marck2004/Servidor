@@ -29,6 +29,10 @@
                 $select = "select * from personas order by Apellido asc";
             }
 
+            $describe = "show columns from personas";
+            $ejecutarDescribe = $conexion->query($describe);
+            $columnas = $ejecutarDescribe->fetchAll(PDO::FETCH_ASSOC);
+
             $ejecutarSelect = $conexion ->query($select);
 
             if($ejecutarSelect->rowCount() > 0){
@@ -60,10 +64,10 @@
                     foreach ($ejecutarSelect as $resultado) {
                         print "<tr style='border:2px solid black'>";
                         print "<td style='border:2px solid black'><input type='radio' name='modificado' value='$resultado[id]'></td>";
-                        print "<td style='border:2px solid black'>$resultado[Nombre]</td>";
-                        print "<td style='border:2px solid black'>$resultado[Apellido]</td>";
-                        print "<td style='border:2px solid black'>$resultado[Direccion]</td>";
-                        print "<td style='border:2px solid black'>$resultado[Tlf]</td>";
+                        foreach ($columnas as $columna) {
+                        
+                        print "<td style='border:2px solid black'>".$resultado[$columna['Field']]."</td>";
+                        }
                         print "</tr>";
                     }
 

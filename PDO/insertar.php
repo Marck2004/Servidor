@@ -4,7 +4,7 @@
 
     if(isset($_SESSION['usuario']) && isset($_SESSION['clave'])){
 
-        if(empty($_REQUEST["nombre"]) ||
+        /*if(empty($_REQUEST["nombre"]) ||
         empty($_REQUEST["apellido"]) ||
         empty($_REQUEST["direccion"]) ||
         empty($_REQUEST["tlf"])){
@@ -28,7 +28,7 @@
         $nombre = sanear('nombre');
         $apellido = sanear('apellido');
         $direccion = sanear('direccion');
-        $tlf = sanear('tlf');
+        $tlf = sanear('tlf');*/
 
         $conexion = conectarBBDD("Agenda");
 
@@ -39,30 +39,67 @@
 
         $selectComprobarExistencia = $conexion->prepare($comprobarExistencia);
 
-        $selectComprobarExistencia->execute([$tlf]);
+        $selectComprobarExistencia->execute([$_REQUEST['Tlf']]);
 
             if($selectComprobarExistencia->rowCount() != 1){
 
             
         if($resultadoSelect ->rowCount() < 10 ){
 
-
-        $consulta = "insert into personas(Nombre,Apellido,Direccion,Tlf)
-            values (?,?,?,?)";
-            
             try{
+                $mostrarColumnas = "show columns from personas";
+
+                $resultado = $conexion->query($mostrarColumnas);
+
+                $numColumnas = $resultado->rowCount();
+
+                $marcadores = array_fill(0,$numColumnas,'?');
+                unset($marcadores[0]);
+
+                $textoMarcadores = implode(',',$marcadores);
                 
+
+                $nombreColumnas = array();
+
+                while($fila = $resultado->fetch(PDO::FETCH_ASSOC)){
+                    if($fila['Field'] != "id"){
+                        $nombreColumnas[] = "$fila[Field]";
+                    }
+                }
+                $textoNombreColumnas = implode(',',$nombreColumnas);
+
+                $nombreColumnas = array_map(function($columna) {
+                    return "'$columna'";
+                }, $nombreColumnas);
+
+        $consulta = "insert into personas ($textoNombreColumnas)
+            values ($textoMarcadores)";
+            
                 $resultado = $conexion -> prepare($consulta);
 
-                $resultado ->execute([$nombre,$apellido,$direccion,$tlf]);
+                $textoInput = array();
+                $ejecutarInsert = $conexion->query("show columns from personas
+                 where Field != 'id'");
+                
+                while($resultadoInput = $ejecutarInsert->fetch(PDO::FETCH_ASSOC)){
 
-                echo "<br>El registro : <br>
-                    Nombre: $nombre, <br>
-                    Apellido: $apellido, <br>
-                    Direccion: $direccion, <br>
-                    Telefono: $tlf, <br>
-                    <b>Se ha creado con exito</b>";
+                    $textoInput[] = $_REQUEST[$resultadoInput['Field']];
+                    print $_REQUEST[$resultadoInput['Field']];
+                }
 
+                $resultado ->execute($textoInput);
+                
+                $listar = $conexion->query("show columns from personas");
+
+                $imprimirResultado = $listar->fetchAll(PDO::FETCH_ASSOC);
+                echo "<b>El registro : </b><br>";
+                unset($imprimirResultado[0]);
+
+                foreach ($imprimirResultado as $indice=>$valor) {
+                    echo $valor['Field'] .": ".$_REQUEST[$valor['Field']]."<br>";
+                }
+                print "<b>Se ha creado con exito</b>";
+                
                     print "<a href='links.php'>Volver al formulario</a>";
 
             }catch(PDOException $e){
@@ -76,5 +113,5 @@
         }
         
         }
-    }
+    //}
 ?>

@@ -30,8 +30,14 @@
 
                 if($ejecutarSelect->rowCount() > 0){
 
+                    $describe = "show columns from personas";
+                    $ejecutarDescribe = $conexion ->query($describe);
+                    $columnas = $ejecutarDescribe->fetchAll(PDO::FETCH_ASSOC);
+
                     print "<table style='border:2px solid black'>";
-                    print "<th style='border:2px solid black'>
+                    foreach ($columnas as $nombreColumna) {
+                        if($nombreColumna["Field"] == "Nombre"){
+                        print "<th style='border:2px solid black'>
                     <b>
                     <a href='listar.php?ascNombre=1'>
                     <img src='img/flecha-hacia-arriba.png' style='heigth:15px;width:15px;'></a>NOMBRE
@@ -39,23 +45,27 @@
                     <img src='img/flecha-hacia-abajo.png' style='heigth:15px;width:15px;'></a>
                     </b>
                     <a href='listar.php?ascNombre=1'>
-                    </th>
-                    <th style='border:2px solid black'>
+                    </th>";
+                        }else if($nombreColumna["Field"] == "Apellido"){
+                        print "<th style='border:2px solid black'>
                     <b>
                     <a href='listar.php?ascApellido=1'>
                     <img src='img/flecha-hacia-arriba.png' style='heigth:15px;width:15px;'></a>APELLIDO
                     <a href='listar.php?descApellido=1'>
                     <img src='img/flecha-hacia-abajo.png' style='heigth:15px;width:15px;'></a>
                     </b>
-                    </th>
-                    <th style='border:2px solid black'><b>DIRECCION</b></th>
-                    <th style='border:2px solid black'><b>TELEFONO</b></th>";
+                    </th>";
+                        }else{
+                            print "<th style='border:2px solid black'>".$nombreColumna["Field"]."</th>";
+                        }
+                    }
+
                     foreach ($ejecutarSelect as $resultado) {
                         print "<tr style='border:2px solid black'>";
-                        print "<td style='border:2px solid black'>$resultado[Nombre]</td>";
-                        print "<td style='border:2px solid black'>$resultado[Apellido]</td>";
-                        print "<td style='border:2px solid black'>$resultado[Direccion]</td>";
-                        print "<td style='border:2px solid black'>$resultado[Tlf]</td>";
+                    
+                        foreach ($columnas as $columna) {
+                        print "<td style='border:2px solid black'>".$resultado[$columna['Field']]."</td>";
+                        }
                         print "</tr>";
                     }
                     print "</table>";

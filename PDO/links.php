@@ -15,6 +15,7 @@
 
     ?>
             <ul>
+                    <li><a href="formAñadir.php">Añadir campos a la tabla</a></li>
                     <li><a href="formInsertar.php">Insertar registro</a></li>
                     <li><a href="listar.php">Listar Registros</a></li>
                     <li><a href="formBorrar.php">Borrar registro</a></li>
