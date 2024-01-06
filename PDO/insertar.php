@@ -84,7 +84,6 @@
                 while($resultadoInput = $ejecutarInsert->fetch(PDO::FETCH_ASSOC)){
 
                     $textoInput[] = $_REQUEST[$resultadoInput['Field']];
-                    print $_REQUEST[$resultadoInput['Field']];
                 }
 
                 $resultado ->execute($textoInput);

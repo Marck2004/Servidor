@@ -39,34 +39,45 @@
                 ?>
             <form action="modificar.php" method="post">
                 <?php
+                $describe = "show columns from personas";
+                $ejecutarDescribe = $conexion ->query($describe);
+                $columnas = $ejecutarDescribe->fetchAll(PDO::FETCH_ASSOC);
+
                 print "<table style='border:2px solid black'>";
-                print "<th style='border:2px solid black'><b>MODIFICAR</b></th>
-                <th style='border:2px solid black'>
+                print "<th style='border:2px solid black'><b>MODIFICAR</b></th>";
+                foreach ($columnas as $nombreColumna) {
+                        if($nombreColumna["Field"] == "Nombre"){
+                        print "<th style='border:2px solid black'>
                     <b>
-                    <a href='formBorrar.php?ascNombre=1'>
+                    <a href='listar.php?ascNombre=1'>
                     <img src='img/flecha-hacia-arriba.png' style='heigth:15px;width:15px;'></a>NOMBRE
-                    <a href='formBorrar.php?descNombre=1'>
+                    <a href='listar.php?descNombre=1'>
                     <img src='img/flecha-hacia-abajo.png' style='heigth:15px;width:15px;'></a>
                     </b>
-                    <a href='formBorrar.php?ascNombre=1'>
-                    </th>
-                    <th style='border:2px solid black'>
+                    <a href='listar.php?ascNombre=1'>
+                    </th>";
+                        }else if($nombreColumna["Field"] == "Apellido"){
+                        print "<th style='border:2px solid black'>
                     <b>
-                    <a href='formBorrar.php?ascApellido=1'>
+                    <a href='listar.php?ascApellido=1'>
                     <img src='img/flecha-hacia-arriba.png' style='heigth:15px;width:15px;'></a>APELLIDO
-                    <a href='formBorrar.php?descApellido=1'>
+                    <a href='listar.php?descApellido=1'>
                     <img src='img/flecha-hacia-abajo.png' style='heigth:15px;width:15px;'></a>
                     </b>
-                    </th>
-                    <th style='border:2px solid black'><b>DIRECCION</b></th>
-                    <th style='border:2px solid black'><b>TELEFONO</b></th>";
+                    </th>";
+                        }else if($nombreColumna['Field'] != "id"){
+                            print "<th style='border:2px solid black'>".$nombreColumna["Field"]."</th>";
+                        }
+                    }
 
                     foreach ($ejecutarSelect as $resultado) {
                         print "<tr style='border:2px solid black'>";
                         print "<td style='border:2px solid black'><input type='radio' name='modificado' value='$resultado[id]'></td>";
                         foreach ($columnas as $columna) {
+                        if($columna["Field"] != "id"){
+                            print "<td style='border:2px solid black'>".$resultado[$columna['Field']]."</td>";
+                        }
                         
-                        print "<td style='border:2px solid black'>".$resultado[$columna['Field']]."</td>";
                         }
                         print "</tr>";
                     }

@@ -55,7 +55,7 @@
                     <img src='img/flecha-hacia-abajo.png' style='heigth:15px;width:15px;'></a>
                     </b>
                     </th>";
-                        }else{
+                        }else if($nombreColumna['Field'] != "id"){
                             print "<th style='border:2px solid black'>".$nombreColumna["Field"]."</th>";
                         }
                     }
@@ -64,7 +64,10 @@
                         print "<tr style='border:2px solid black'>";
                     
                         foreach ($columnas as $columna) {
-                        print "<td style='border:2px solid black'>".$resultado[$columna['Field']]."</td>";
+                            if($columna['Field'] != "id"){
+                                print "<td style='border:2px solid black'>".$resultado[$columna['Field']]."</td>";
+                            }
+                        
                         }
                         print "</tr>";
                     }
