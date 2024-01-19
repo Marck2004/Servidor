@@ -1,6 +1,6 @@
 <?php
 
-    $para ="marcosmaestrocobo@gmail.com";
+    $para ="sergiosherber21@gmail.com";
     $asunto = "prueba";
     $descripcion = "este es el correo de prueba";
     $de ="From: mcobomaestro@gmail.com";

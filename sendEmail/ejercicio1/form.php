@@ -45,6 +45,16 @@
         ?>
         <input type="submit" value="enviar" name="enviar">
     </form>
+    <?php
+
+            if(isset($_GET["lista"])){
+                $lista = json_decode($_GET["lista"]);
+                foreach ($lista as $key => $value) {
+                    print "<p>$key: $value</p>";
+                }
+            }
+
+    ?>
 
 </body>
 </html>

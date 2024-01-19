@@ -24,8 +24,9 @@
                 header("location:form.php?".$errorNombre.$errorApellido.$errorEmail.$errorAsunto
                 .$errorMensaje);
          }else{
+            $listaDatos = array("nombre"=>$nombre,"apellido"=>$apellido,"email"=>$email,"asunto"=>$asunto,"mensaje"=>$mensaje);
             if(mail($email,$asunto,$mensaje,"mcobomaestro@gmail.com")){
-                echo "Correo exitoso";
+                header("location:form.php?lista=".json_encode($listaDatos));
             }else{
                 echo "Hubo un problema con el envio";
             }
