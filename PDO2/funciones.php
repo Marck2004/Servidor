@@ -6,7 +6,7 @@
     function conexionServidor(){
         try{
         $conexion = new PDO("mysql:host=localhost;charset=utf8","root","");
-            $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            $conexion->setAttribute(PDO::ATTR_MODE,PDO::ERRMODE_EXCEPTION);
         return $conexion;
     }catch(PDOException $e){
         print $e->getMessage();
@@ -15,7 +15,7 @@
     function conectarBBDD($bbdd){
         try{
             $conexion = new PDO("mysql:host=localhost;dbname=$bbdd;charset=utf8","root","");
-            $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+            $conexion->setAttribute(PDO::ATTR_MODE,PDO::ERRMODE_EXCEPTION);
             return $conexion;
         }catch(PDOException $e){
             print $e->getMessage();
