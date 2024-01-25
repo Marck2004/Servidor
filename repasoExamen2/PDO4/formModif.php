@@ -40,7 +40,8 @@
         <input type="submit" value="enviar" name="enviar">
         <p><a href="links.php">Volver al formulario</a></p>
             </form>
-        <?
+        ?>
+<?php
 
     }else{
         header("location:index.php?error=1");

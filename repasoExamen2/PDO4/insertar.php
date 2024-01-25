@@ -35,7 +35,7 @@
         }else{
             if(is_uploaded_file($foto["tmp_name"])){
                 $extensiones = array("image/jpg","image/png");
-
+                
                 if(in_array($foto["type"],$extensiones)){
                     $nombreDirectorio = "imagenes";
                 if(!is_dir($nombreDirectorio)){

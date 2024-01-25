@@ -18,7 +18,8 @@
             header("location:login.php?error=1");
         }
         $conn = conectarBBDD("Matricula2");
-        $stmt = $conn->query("select * from matriculas");
+        $stmt = $conn->prepare("select * from matriculas where dni = ?");
+        $stmt->execute([$_POST["modif"]]);
         $stmt = $stmt->fetch(PDO::FETCH_ASSOC);
 
     ?>
