@@ -7,7 +7,7 @@
 </head>
 <body>
     <form action="prueba.php" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="MAX_FILE_SIZE" value="102400" />
+    <input type="hidden" name="MAX_FILE_SIZE" value="1000000" />
     <p><input type="file" name="archivo" id="archivo"></p>
     <input type="submit" value="enviar" name="enviar">
     </form>
