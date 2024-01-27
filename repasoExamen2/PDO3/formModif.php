@@ -32,7 +32,7 @@
         print "<tr>";
         foreach ($columnas as $columna) {
             if($columna["Field"] == "foto"){
-                echo "<td><img src='fotos/".$valores[$columna['Field']]."'></td>";
+                echo "<td><img src='fotos/".$valores[$columna['Field']]."'></td>";  
             }else{
                 echo "<td>".$valores[$columna['Field']]."</td>";
             }
