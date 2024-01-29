@@ -9,8 +9,8 @@
 
         if(!preg_match('/^[A-Za-zñÑ][A-Za-zñ\s-]+$/',$nombre) ||
             !preg_match('/^\d{0,2}$/',$edad) ||
-            !preg_match('/^(calle|plaza|avenida)[A-Za-z\s-]+$/',$direccion) ||
-            !preg_match('/^(91|6)\d{7}$/',$telefono)){
+                !preg_match('/^(calle|plaza|avenida)[A-Za-z\s-]+$/',$direccion) ||
+                !preg_match('/^(91|6)\d{7}$/',$telefono)){
             if(!preg_match('/^[A-Za-zñÑ][a-zñ\s-]+$/',$nombre)){
                 $errorNombre = 'errorNombre=1&';
             }
