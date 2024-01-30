@@ -1,0 +1,39 @@
+2024-01-30  18:01:12 - Credenciales incorrectas
+2024-01-30  18:01:12 - Credenciales incorrectas
+2024-01-30  18:01:25 - Credenciales incorrectas
+2024-01-30  18:01:25 - Credenciales incorrectas
+2024-01-30  18:01:26 - Credenciales incorrectas
+2024-01-30  18:01:26 - El campo direccion de la insercion esta vacio
+2024-01-30  18:01:26 - El campo precio de la insercion esta vacio
+2024-01-30  18:01:26 - El campo tamaño de la insercion esta vacio
+2024-01-30  18:01:26 - El campo extras de la insercion esta vacio
+2024-01-30  18:01:26 - El campo direccion de la insercion esta vacio
+2024-01-30  18:01:26 - El campo precio de la insercion esta vacio
+2024-01-30  18:01:26 - El campo tamaño de la insercion esta vacio
+2024-01-30  18:01:26 - El campo extras de la insercion esta vacio
+2024-01-30  18:01:42 - El campo direccion de la insercion esta vacio
+2024-01-30  18:01:42 - El campo precio de la insercion esta vacio
+2024-01-30  18:01:42 - El campo tamaño de la insercion esta vacio
+2024-01-30  18:01:42 - El campo extras de la insercion esta vacio
+2024-01-30  18:01:42 - El campo direccion de la insercion esta vacio
+2024-01-30  18:01:42 - El campo precio de la insercion esta vacio
+2024-01-30  18:01:42 - El campo tamaño de la insercion esta vacio
+2024-01-30  18:01:42 - El campo extras de la insercion esta vacio
+2024-01-30  18:01:43 - El campo direccion de la insercion esta vacio
+2024-01-30  18:01:43 - El campo precio de la insercion esta vacio
+2024-01-30  18:01:43 - El campo tamaño de la insercion esta vacio
+2024-01-30  18:01:43 - El campo extras de la insercion esta vacio
+2024-01-30  18:01:44 - El campo precio de la insercion esta vacio
+2024-01-30  18:01:44 - El campo tamaño de la insercion esta vacio
+2024-01-30  18:01:44 - El campo precio de la insercion esta vacio
+2024-01-30  18:01:44 - El campo tamaño de la insercion esta vacio
+2024-01-30  18:01:44 - El campo precio de la insercion esta vacio
+2024-01-30  18:01:44 - El campo tamaño de la insercion esta vacio
+2024-01-30  18:01:44 - El campo precio de la insercion esta vacio
+2024-01-30  18:01:44 - El campo tamaño de la insercion esta vacio
+2024-01-30  18:01:51 - Credenciales incorrectas
+2024-01-30  19:01:01 - El registro ya esta en la bbdd
+2024-01-30  19:01:15 - No ha seleccionado ningun elemento en la operacion de borrado
+2024-01-30  19:01:15 - No ha seleccionado ningun elemento en la operacion de borrado
+2024-01-30  19:01:15 - No ha seleccionado ningun elemento en la operacion de borrado
+2024-01-30  19:01:15 - No ha seleccionado ningun elemento en la operacion de borrado
