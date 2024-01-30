@@ -13,6 +13,7 @@
     $stmt = $conn->query("select * from personas");
 
     if($stmt->rowCount() > 0){
+
     print "<table>";
     echo "  <th>NOMBRE</th>
             <th>APELLIDO</th>

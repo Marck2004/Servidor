@@ -1,0 +1,4 @@
+2024-01-30  11-57-53 - Credenciales incorrectas
+2024-01-30  11:58:12 - Credenciales incorrectas
+2024-01-30  11:58:13 - Credenciales incorrectas
+2024-01-30  12:33:13 - En el formulario de insercion hay algun campo vacio
