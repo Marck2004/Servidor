@@ -22,3 +22,5 @@
 2024-01-27 : 16-29-12 - No se subio ningun fichero
 2024-01-27 : 16-29-12 - Registro ya insertado
 2024-01-27 : 16-29-23 - No se subio ningun fichero
+2024-01-30 : 20-49-40 - Campos erroneos
+2024-01-30 : 20-50-16 - Campos erroneos
