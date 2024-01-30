@@ -14,20 +14,18 @@
 
     print "<table>";
     foreach ($stmt as $campos) {
-
         print "<th>$campos[Field]</th>";
-    
     }
     $columnas = $conn->query("show columns from persona");
     $columnas=$columnas->fetchAll(PDO::FETCH_ASSOC);
 
     $stmt = $conn->query("select * from persona");
-    $stmt=$stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    foreach ($columnas as $columna) {
+    $filas=$stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    foreach ($filas as $fila) {
         echo "<tr>";
-        foreach ($stmt as $valor) {
-            echo "<td>".$valor[$columna['Field']]."</td>";
+        foreach ($columnas as $columna) {
+            echo "<td>".$fila[$columna['Field']]."</td>";
         }
         echo "</tr>";
     }
