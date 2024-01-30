@@ -25,20 +25,7 @@
     include("funciones.php");
     manejarSesion();
     $conn=conectarBBDD("marzo3");
-    $stmt=$conn->query("select * from viviendas");
-
-        foreach ($stmt as $valores) {
-            echo "<tr>
-                <td>$valores[tipo]</td>
-                <td>$valores[zona]</td>
-                <td>$valores[direccion]</td>
-                <td>$valores[dormitorios]</td>
-                <td>$valores[precio]</td>
-                <td>$valores[tamaño]</td>
-                <td>$valores[extras]</td>
-                <td><img src='imagenes/$valores[foto]'></td>
-            </tr>";
-        }
+    
     ?>
 </table>
 <?php
@@ -78,6 +65,21 @@
     ?>
 </table>
     <?php    
+    }else{
+        $stmt=$conn->query("select * from viviendas");
+print "<table>";
+        foreach ($stmt as $valores) {
+            echo "<tr>
+                <td>$valores[tipo]</td>
+                <td>$valores[zona]</td>
+                <td>$valores[direccion]</td>
+                <td>$valores[dormitorios]</td>
+                <td>$valores[precio]</td>
+                <td>$valores[tamaño]</td>
+                <td>$valores[extras]</td>
+                <td><img src='imagenes/$valores[foto]'></td>
+            </tr>";
+        }
     }
-
+print "</table>";
 ?>
