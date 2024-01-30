@@ -1,0 +1,12 @@
+Nombre
+preg_match('/^[A-Za-zñÑ][A-Za-zñ\s-]+$/',$nombre)
+
+Edad
+preg_match('/^\d{0,2}$/',$edad)
+
+Direccion
+preg_match('/^(calle|plaza|avenida)[A-Za-z\s-]+$/',$direccion)
+
+Telefono
+preg_match('/^(91|6)\d{7}$/',$telefono)
+
