@@ -11,6 +11,7 @@
 
 
         foreach ($stmt as $campo) {
+            if($campo['Field'] != 'id'){
             if(empty($_POST[$campo['Field']])){
                 header("location:formInsertar.php?vacio=1");
             }else{
@@ -18,6 +19,7 @@
                 $interrogantes[] = '?'; 
                 $campos[] = $campo['Field'];
             }
+        }
         }
         
         $camposCadena = implode(",",$campos);
